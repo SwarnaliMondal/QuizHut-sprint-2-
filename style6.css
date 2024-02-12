@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.quiz {
+    width: 50%;
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-right: 2%;
+}
+
+.heading {
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 9, 9);
+    font-size: 20px;
+}
+
+.qa_set.active {
+    display: block;
+}
+
+.qa_set h4 {
+    margin: 0 0 15px;
+}
+
+.qa_ans_row {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.qa_ans_row input {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.qa_ans_row span {
+    display: block;
+    padding: 8px 15px;
+    background-color: #bad0c9;
+    border-radius: 15px;
+    transition: all 0.3s ease-out;
+}
+
+.qa_ans_row:hover span {
+    background-color: #9ab5ac;
+}
+
+.qa_ans_row input:checked+span {
+    background-color: #f93c3c;
+}
+
+.qa_ans_row input[valid]:checked+span {
+    background-color: green;
+    color: #fff;
+}
+
+.calculator {
+    background: #3a4452;
+    padding: 20px;
+    height: 600px;
+    border-radius: 10px;
+}
+
+.calculator form input {
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+form .display {
+    display: flex;
+    background-color: white;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+form .display input {
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    box-shadow: none;
+}
+
+form input.backspace {
+    color: red;
+}
+
+form input.operator {
+    color: rgb(16, 248, 16);
+}
+
+form input.operator:hover {
+    background: #06b5e6a4;
+}
+
+form input.number {
+    color: white;
+}
+
+form input.equal {
+    color: white;
+    background: rgba(255, 0, 234, 0.397);
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+form input.number:hover {
+    background: rgb(1, 1, 88);
+}
+
+form input.equal:hover {
+    background: rgba(0, 128, 0, 0.911);
+}
+
+@media (max-width: 840px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .heading {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .quiz,
+    .calculator {
+        width: 100%;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .qa_ans_row input[type="radio"] {
+        margin-right: 5px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .container{
+        display:block;
+    }
+    .calculator {
+        padding: 10px;
+    }
+    
+    .calculator form input {
+        width: 15%; /* Adjust button width for smaller screens */
+        font-size: 16px; /* Adjust font size of buttons for smaller screens */
+        margin-right:0px;
+    }
+
+    form .display input {
+        font-size: 30px; /* Adjust font size of the display for smaller screens */
+    }
+
+    form input.equal {
+        width: 60px; /* Adjust width of the equal button for better visibility */
+        height: 60px; /* Adjust height of the equal button for better visibility */
+    }
+}
+
+

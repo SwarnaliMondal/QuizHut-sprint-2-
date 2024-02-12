@@ -1,0 +1,84 @@
+<!--1st page (registration page)-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="register.css"
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="box">
+        <div class="heading">
+            <h1>Welcome To QuizHut</h1>
+        </div>
+        <form name="myform" action="start.html" method="post" onsubmit="return validateForm()" >
+            
+            <h1>Create account</h1>
+            <!--Name input with required and placeholder attributes-->
+            <label for="name">Your name: </label><br>
+            <input type="name" id="name" value="" placeholder="First and last name"><br>
+            <span id="name1" style="color: red;"></span><br>
+            <!--Mobile input with required and placement attributes-->
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" required ><br>
+            <!--Passport input with required and placement attributes-->
+            <label for="password">Password: </label><br>
+            <input type="password" name="password" id="password" placeholder="At least 6 characters">
+            <span id="message" style="color:red"></span><br>
+            <!--Re-password input with required and placement attributes-->
+            <label for="re-password">Re-enter password:</label><br>
+            <input type="password" name="password2" id="password2" >
+            <span id="message2" style="color:red"></span><br><br>
+            <!-- Submit button -->
+            <a href="start.html"><button type="submit" class="btn1">Continue</button></a>
+        </form>
+        <!--javascript for form validation-->
+        <script>
+            function validateForm(){
+                var name=document.myform.name.value;
+                var x=document.myform.email.value;
+                var atposition=x.indexOf("@");
+                var dotposition=x.lastIndexOf(".");
+                var pw=document.myform.password.value;
+                var pw2=document.myform.password2.value;
+
+                if(name==null ||name=="")//check if the name field is empty or not
+                {
+                    document.getElementById("name1").innerHTML="**please enter your name";
+                    return false;
+                }
+                if(!isNaN(name))//check the entered name contains characters or not
+                {
+                    document.getElementById("name1").innerHTML="**only characters are allowed";
+                    return false;
+                }
+                if(atposition<1||dotposition<atposition+2||dotposition+2>=x.length)//email validation
+                {
+                    alert("please enter a valid email address \n atposition:"+atposition+"\n dotposition:"+dotposition);
+                    return false;
+                }if(pw=="")//check if the password field is empty or not
+                {
+                    document.getElementById("message").innerHTML="**Fill the password please!";
+                    return false;
+                }if(pw.length<6)//check if the password length is 6 or greater than it
+                {
+                    document.getElementById("message").innerHTML="**password length must be atleast 6 characters";
+                    return false;
+                }if(pw2=="")//check if the confirmed-password field is empty or not
+                {
+                    document.getElementById("message2").innerHTML="**Enter the password please!";
+                    return false;
+                    
+                }if(pw!=pw2)//check if the password and confirmed password is same or not
+                {
+                    document.getElementById("message2").innerHTML="**confirmed password must be same!";
+                    return false;
+                }
+                else{
+                    alert("Account created successfully!!");
+                    return true;
+                }
+            }
+        </script>
+    </body>
+</html>

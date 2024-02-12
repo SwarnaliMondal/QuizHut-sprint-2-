@@ -1,0 +1,126 @@
+<!--About page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            padding: 0 10px;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(rgb(2, 93, 129), rgb(3, 116, 136), rgb(243, 243, 245));
+        }
+
+        .box {
+            background: white;
+            max-width: 90%; /* Adjusted for responsiveness */
+            padding: 20px;
+            border: 0.125rem solid rgba(10, 1, 1, 0.9);
+            border-radius: 0.94rem;
+        }
+
+        .box h1 {
+            text-align: center;
+            font-size: 2rem;
+            color: brown;
+            animation: slider 2s infinite linear;
+        }
+
+        @keyframes slider {
+            0% {
+                color: red;
+            }
+            25% {
+                color: green;
+            }
+            50% {
+                color: blue;
+            }
+            75% {
+                color: purple;
+            }
+            100% {
+                color: pink;
+            }
+        }
+
+        .box h4 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: rgb(250, 98, 10);
+        }
+
+        .box p {
+            padding: 1.25rem;
+            font-size: 1.25rem;
+        }
+
+        .box button {
+            display: block;
+            margin: 0 auto; /* Center button */
+            padding: 1rem;
+            width: 50%; /* Adjusted for responsiveness */
+            border: 0.125rem solid green;
+            border-radius: 0.94rem;
+            font-size: 1.25rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            animation: btn 3s infinite linear;
+            color: white;
+            background: pink; /* Changed default background color */
+        }
+
+        @keyframes btn {
+            0% {
+                background: red;
+            }
+            25% {
+                background: green;
+            }
+            50% {
+                background: blue;
+            }
+            75% {
+                background: purple;
+            }
+            100% {
+                background: pink;
+            }
+        }
+
+        /* Media Query for smaller devices */
+        @media (max-width: 600px) {
+            .box {
+                max-width: 100%; /* Adjusted for smaller screens */
+            }
+            .box h1 {
+                font-size: 1.5rem; /* Decreased font size for smaller screens */
+            }
+            .box h4 {
+                font-size: 1.25rem; /* Decreased font size for smaller screens */
+            }
+            .box p {
+                font-size: 1rem; /* Decreased font size for smaller screens */
+            }
+            .box button {
+                width: 70%; /* Adjusted button width for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>About Me</h1>
+        <h4>Developer & Designer</h4>
+        <p>I am a front-end web developer. I can write efficient code and create pixel-perfect designs. I can make the website more and more attractive using animations.</p>
+        <a href="calculator.html"><button>OK</button></a>
+    </div>
+</body>
+</html>
